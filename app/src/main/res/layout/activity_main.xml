@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:background="#F3F6FC"
+    android:fillViewport="true"
+    android:clipToPadding="false">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,79 +15,187 @@
         android:gravity="center_horizontal">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VOTRE SANTÉ"
+            android:textColor="#4776E6"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.15"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
             android:id="@+id/textViewTitre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/titre"
-            android:textSize="28sp"
+            android:textColor="#172B4D"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:layout_marginBottom="28dp" />
+            android:layout_marginTop="8dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/label_poids"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/editTextPoids"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_poids"
-            android:inputType="numberDecimal"
-            android:singleLine="true"
-            android:importantForAutofill="no" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/label_taille"
-            android:textSize="16sp"
-            android:layout_marginTop="16dp" />
-
-        <EditText
-            android:id="@+id/editTextTaille"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_taille"
-            android:inputType="numberDecimal"
-            android:singleLine="true"
-            android:importantForAutofill="no" />
-
-        <Button
-            android:id="@+id/buttonCalculer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/bouton_calculer"
-            android:layout_marginTop="24dp" />
-
-        <Button
-            android:id="@+id/buttonEffacer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/bouton_effacer" />
-
-        <TextView
-            android:id="@+id/textViewImc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/resultat_initial"
-            android:textSize="22sp"
-            android:textStyle="bold"
+            android:text="Découvrez votre indice de masse corporelle"
+            android:textColor="#77839A"
+            android:textSize="15sp"
             android:gravity="center"
-            android:layout_marginTop="32dp" />
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="28dp"/>
 
-        <TextView
-            android:id="@+id/textViewCategorie"
+        <!-- Carte de saisie -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/categorie_initiale"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:orientation="vertical"
+            android:padding="22dp"
+
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vos informations"
+                android:textColor="#172B4D"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="22dp"/>
+
+            <!-- Poids -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_poids"
+                android:textColor="#42526E"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/editTextPoids"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:hint="@string/hint_poids"
+                android:textColor="#172B4D"
+                android:textColorHint="#98A2B3"
+                android:textSize="16sp"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:importantForAutofill="no"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_taille"
+                android:textColor="#42526E"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/editTextTaille"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:hint="@string/hint_taille"
+                android:textColor="#172B4D"
+                android:textColorHint="#98A2B3"
+                android:textSize="16sp"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:importantForAutofill="no"/>
+
+            <Button
+                android:id="@+id/buttonCalculer"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/bouton_calculer"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="#4776E6"
+                android:layout_marginTop="26dp"/>
+
+            <Button
+                android:id="@+id/buttonEffacer"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="@string/bouton_effacer"
+                android:textColor="#4776E6"
+                android:textSize="15sp"
+                android:backgroundTint="#EAF0FF"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:gravity="center"
-            android:padding="12dp"
-            android:layout_marginTop="8dp" />
+            android:padding="24dp"
+            android:layout_marginTop="24dp"
+            android:elevation="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VOTRE RÉSULTAT"
+                android:textColor="#77839A"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.12"/>
+
+            <TextView
+                android:id="@+id/textViewImc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/resultat_initial"
+                android:textColor="#4776E6"
+                android:textSize="38sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="14dp"/>
+
+            <View
+                android:layout_width="56dp"
+                android:layout_height="4dp"
+                android:background="#4776E6"
+                android:layout_marginTop="14dp"/>
+
+            <TextView
+                android:id="@+id/textViewCategorie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/categorie_initiale"
+                android:textColor="#23865B"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="14dp"
+                android:layout_marginTop="14dp"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LIMC est un indicateur général et ne remplace pas un avis médical."
+            android:textColor="#77839A"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
 
     </LinearLayout>
+
 </ScrollView>
